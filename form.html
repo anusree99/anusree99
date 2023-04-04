@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+          background-repeat: no-repeat;
+          background-image: url("anusha.jpg")
+          
+        }
+    </style>
+</head>
+<body>
+    <form action="index3.html" onsubmit="return vali()">   
+     <fieldset>
+        <legend>fill the form</legend>
+
+        <p>username <input type="text"></p>
+        <h3 id="username"></h3>
+
+
+        <p>email <input type="email"></p>
+        <h3 id="email"></h3>
+
+
+        <p>password <input type="password"></p>
+        <h3 id="password"></h3>
+
+
+        <p>confirm password <input type="password"></p>
+        <h3 id="confirmpassword"></h3>
+
+
+        <p>
+            <input type="checkbox" id="agree">
+            <label for="agree"> i agree terms and conditions</label>
+        </p>
+
+        <input type="submit" value="Register " id="register" disabled>
+     </fieldset>
+     
+    </form>
+
+
+    <script>
+        var agree=document.getElementById("agree")
+        agree.addEventListener('change',function()
+        {
+            let register=document.getElementById("register")
+            if(agree.checked)
+            {
+                register.removeAttribute("disabled")
+            }
+            else
+            {
+                register.setAttribute("disabled","disabled")
+            }
+        }
+        )
+    </script>
+    
+    <script>
+    var input=document.getElementsByTagName("input")
+    function vali()
+    {
+        if(input[0].value!="anusha")
+        {
+           let x=document.getElementById("username")
+           x.innerHTML="username is incorrect"
+           x.style.color="red"
+           return false;
+        }
+        if(input[1].value!="vy485899@gmail.com")
+        {
+          let x=document.getElementById("email")
+          x.innerHTML="invalid email"
+          x.style.color="yellow"
+          return false
+        }
+        if(input[2].value!="Anusha2001@")
+        {
+          let x=document.getElementById("password")
+          x.innerHTML="invalid password"
+          x.style.color="blue"
+          return false
+        }
+        if(input[3].value!="Anusha2001@")
+        {
+            let x=document.getElementById("confirmpassword")
+            x.innerHTML="invalid confirm password"
+            x.style.color="green"
+            return false;
+        }
+
+    }
+</script>
+</body>
+</html>
